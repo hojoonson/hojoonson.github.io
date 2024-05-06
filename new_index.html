@@ -13,7 +13,7 @@
         body { font-family: 'Roboto', sans-serif; }
         .header { text-align: center; padding: 30px; }
         .section-title { margin-top: 30px; }
-        .avatar { border-radius: 30%; width: 130px; height: 174px; }
+        .avatar { border-radius: 20%; width: 201px; height: 270px; }
         .card { margin-bottom: 20px; }
         .navbar-nav .nav-link { color: #007bff; }
         .timeline { position: relative; }
@@ -24,9 +24,11 @@
         .timeline-entry::before { content: ''; position: absolute; width: 20px; height: 20px; border-radius: 50%; background-color: #007bff; top: 0; left: -10px; }
         .timeline-entry-left::before { right: -10px; left: auto; }
         .timeline-entry-right::before { left: -10px; }
-        .media-content { width: 100%; max-width: 500px; height: auto; margin-top: 10px; margin-bottom: 10px; }
+        .media-content { width: 100%; max-width: 300px; height: auto; margin-left: 10px;}
+        .media-content-project { width: 100%; max-width: 300px; height: auto; margin-left: 10px;}
         .timeline-content { padding-top: 20px; }
-        .education-period, .project-period { float: right; color: gray; font-size: smaller; font-weight: normal; }
+        .education-period { float: right; color: gray; font-size: smaller; font-weight: normal; }
+        .project-period { float: right; color: gray; font-weight: normal; }
     </style>
 </head>
 <body>
@@ -45,9 +47,9 @@
     </header>
 
     <div class="container">
+        <img src="images/Hojoon_Son.jpg" alt="Hojoon Son" class="avatar float-left mr-3 mb-3">
         <section id="about" class="section-title">
             <h2>About Me</h2>
-            <img src="images/Hojoon_Son.jpg" alt="Hojoon Son" class="avatar float-left mr-3 mb-3">
             <p>
                 I am currently pursuing the Ph.D. degree in mechanical engineering with the Georgia Institute of
                 Technology
@@ -62,11 +64,11 @@
                 I gained professional experience as a Software Engineer with NEXTLab Company Ltd., from 2020 to
                 2023.
                 <br>
-                My research interests include <strong>Knowledge-Based Systems</strong> to retrieve key
-                information from industrial systems
-                and support human decision-making, specifically <strong>Machine Vision</strong>,
-                <strong>Vehicle/Robot Simulation</strong>
-                with <strong>Reinforcement Learning</strong>, and <strong>Decision Support Systems</strong>.
+                My research interests include <strong>Knowledge-Based Systems</strong> and <strong>Decision Support Systems</strong> 
+                to retrieve key information from harsh industrial environment and support human decision-making, specifically 
+                <strong>Simulation-based System Validation</strong>, 
+                <strong>Digital Twin</strong>, and 
+                <strong>Robot Learning</strong> for <strong>Path Optimization</strong>.
             </p>
         </section>
 
@@ -96,9 +98,10 @@
             <!-- Card structure for publications with media -->
             <div class="card">
                 <div class="card-body">
+                    <img src="images/dt_npp_2024.png" alt="Publication Image" class="media-content float-right">
                     <h5 class="card-title">A nuclear power plant digital twin for developing robot navigation and interaction</h5>
-                    <img src="images/dt_npp_2024.png" alt="Publication Image" class="media-content">
                     <p class="card-text">Frontiers in Energy Research (2024)</p>
+                    <p class="card-text">Himanshu Vairagade, Sungmin Kim, <u>Hojoon Son</u>, and Fan Zhang</p>
                     <a href="https://www.frontiersin.org/articles/10.3389/fenrg.2024.1356624/full" class="btn btn-primary mt-2" target="_blank">Read More</a>
                 </div>
             </div>
@@ -107,11 +110,12 @@
         <section id="projects" class="section-title">
             <h2>Projects</h2>
             <!-- Card structure for projects with media -->
-            <div class="card">
+            <div class="card" style="width:50%">
                 <div class="card-body">
-                    <h5 class="card-title">Robot-assisted Online Monitoring <span class="project-period">Aug. 2023 - Present</span></h5>
-                    <img src="images/robot-npp.png" alt="Project Image" class="media-content">
-                    <p class="card-text">Georgia Tech</p>
+                    <h5 class="card-title">Robot-assisted Online Monitoring, Online Maintenance, and Dynamic
+                        Risk Assessment for LWRs and Advanced Reactors</h5>
+                        <p class="card-text">Georgia Tech <span class="project-period">Aug. 2023 - Present</span></p>
+                        <img src="images/robot-npp.png" alt="Project Image" class="media-content-project">
                     <a href="https://neup.inl.gov/FY22%20Abstracts/DECP-28405_TechnicalAbstract_2022TechnicalAbstractDECP-28405.pdf" class="btn btn-primary mt-2" target="_blank">Learn More</a>
                 </div>
             </div>
