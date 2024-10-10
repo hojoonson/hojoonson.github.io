@@ -1,0 +1,97 @@
+/* Timeline CSS */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Central vertical line for desktop */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #3498db;
+    top: 0;
+    bottom: 0;
+    left: 50%; /* Vertical line centered for desktop */
+    margin-left: -3px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* Circle for left-aligned timeline items (desktop) */
+.timeline-item.left::after {
+    content: ' ';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border: 4px solid #3498db;
+    top: 15px;
+    right: -12.5px; /* Circle positioned to the right of left-aligned items */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Circle for right-aligned timeline items (desktop) */
+.timeline-item.right::after {
+    content: ' ';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border: 4px solid #3498db;
+    top: 15px;
+    left: -12.5px; /* Circle positioned to the left of right-aligned items */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+/* Remove the arrow pseudo-elements (no ::before) */
+
+.timeline-item h4,
+.timeline-item p {
+    margin: 0;
+    padding: 10px 0;
+}
+
+/* Mobile-Responsive timeline (right-aligned circles for all items on smaller screens) */
+@media screen and (max-width: 600px) {
+    /* Make timeline items full width on mobile */
+    .timeline-item {
+        width: 100%;
+        left: 0;
+        padding-right: 20px; /* Add padding to align text away from the right side */
+        text-align: left; /* Align text to the left */
+    }
+
+    /* Move the vertical line to the far right */
+    .timeline::after {
+        left: 2%; /* Position the vertical blue line further to the right on mobile */
+    }
+
+    /* Ensure circles for left-aligned items stay on the right on mobile */
+    .timeline-item.left::after {
+        left: 2%; /* Circle aligned on the right for left-aligned items on mobile */
+        margin-left: -12.5px;
+    }
+
+    /* Ensure circles for right-aligned items stay on the right on mobile */
+    .timeline-item.right::after {
+        left: 2%; /* Circle aligned on the right for right-aligned items on mobile */
+        margin-left: -12.5px;
+    }
+}
